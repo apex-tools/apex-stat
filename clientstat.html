@@ -39,7 +39,9 @@
 				<!-- sidebar -->
 				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
 
-					<ul class="nav"><li><a href="index.html">Сводная статистика</a></li></ul>
+					<ul class="nav">
+						<li><a href="index.html">Сводная статистика</a></li>
+					</ul>
 					<ul ng-repeat="clientcard in clientcards" class="nav">
 
 						<li><a href="clientstat.html">{{ clientcard.name }}</a></li>
@@ -49,22 +51,19 @@
 
 				<!-- main area -->
 				<div class="col-xs-12 col-sm-9">
-					<h1>Сводная статистика</h1>
+					<h1>Инфо о клиенте</h1>
 
 
-					<div class="row">
-						<button ng-click="param = 'visits'" type="button" class="btn btn-default btn-sm">Визиты</button>
-						<button ng-click="param = 'lids' " type="button" class="btn btn-default btn-sm">Лиды</button>
-						<button ng-click="param = 'sales' " type="button" class="btn btn-default btn-sm">Сделки</button>
-						<button ng-click="param = 'income' " type="button" class="btn btn-default btn-sm">Доход</button>
-					</div>
-					<div ng-repeat="clientcard in clientcards" class="col-xs-12 col-md-3 dashboard-card">
-						<h2>{{ clientcard.name }}</h2>
-						<span>{{ plus($index,param) }}</span>
+					<table class="table table-hover">
+						<tr>
 
+							<td>{{ clientcards[0].visits }}</td>
+							<td>{{ clientcards[0].lids }}</td>
+							<td>{{ clientcards[0].sales }}</td>
+							<td>{{ clientcards[0].income }}</td>
+						</tr>
 
-
-					</div>
+					</table>
 
 
 				</div>
