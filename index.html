@@ -34,11 +34,11 @@
 
 				<ul class="list-inline">
 
-					<li>Сегодня</li>
-					<li>Вчера</li>
-					<li>Неделя</li>
-					<li>Месяц</li>
-					<li>Квартал</li>
+					<li><a class="btn btn-default">Сегодня</a></li>
+					<li><a class="btn btn-default">Вчера</a></li>
+					<li><a class="btn btn-primary">Неделя</a></li>
+					<li><a class="btn btn-default">Месяц</a></li>
+					<li><a class="btn btn-default">Квартал</a></li>
 
 				</ul>
 
@@ -74,7 +74,7 @@
 					</li>
 					<li>
 						<label>
-							<input type="checkbox" checked>Конверсия в заявки</label>
+							<input type="checkbox">Конверсия в заявки</label>
 					</li>
 					<li>
 						<label>
@@ -82,7 +82,7 @@
 					</li>
 					<li>
 						<label>
-							<input type="checkbox" checked>Конверсия в продажи</label>
+							<input type="checkbox">Конверсия в продажи</label>
 					</li>
 					<li>
 						<label>
@@ -90,7 +90,7 @@
 					</li>
 					<li>
 						<label>
-							<input type="checkbox" checked>Выручка</label>
+							<input type="checkbox">Выручка</label>
 					</li>
 					<li>
 						<label>
@@ -98,19 +98,19 @@
 					</li>
 					<li>
 						<label>
-							<input type="checkbox" checked>Прибыль</label>
+							<input type="checkbox">Прибыль</label>
 					</li>
 					<li>
 						<label>
-							<input type="checkbox" checked>Средний чек</label>
+							<input type="checkbox">Средний чек</label>
 					</li>
 					<li>
 						<label>
-							<input type="checkbox" checked>Расход</label>
+							<input type="checkbox">Расход</label>
 					</li>
 					<li>
 						<label>
-							<input type="checkbox" checked>CPO</label>
+							<input type="checkbox">CPO</label>
 					</li>
 					<li>
 						<label>
@@ -133,7 +133,7 @@
 
 		<div class="row">
 
-			<table class="table table-null-margin">
+			<table class="table table-hover">
 
 				<thead>
 
@@ -197,7 +197,7 @@
 
 						<td colspan="11">
 
-							<table class="table table-null-margin">
+							<table class="table table-hover">
 
 								<tbody ng-repeat="camp in ad_system.camps">
 
@@ -221,7 +221,7 @@
 
 										<td colspan="11">
 
-											<table class="table">
+											<table class="table table-hover">
 
 												<tbody ng-repeat="ad in camp.ads">
 
@@ -245,7 +245,7 @@
 
 														<td colspan="11">
 
-															<table class="table">
+															<table class="table table-hover">
 
 																<tbody ng-repeat="keyword in ad.keywords">
 

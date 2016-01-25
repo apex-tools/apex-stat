@@ -3,6 +3,34 @@
 	border: 1px solid black;
 }
 
+.table {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.table tr {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.table th {
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 100px;
+	min-width: 100px;
+	max-width: 100px;
+}
+
+.table td {
+
+	width: 100px;
+	min-width: 100px;
+	max-width: 100px;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+
 .morris-hover {
 	position: absolute;
 	z-index: 1000
