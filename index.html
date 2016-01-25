@@ -17,64 +17,258 @@
 </head>
 
 <body ng-app="AppApexStat">
-	<div ng-controller="MainController" class="page-container">
 
-		<!-- top navbar -->
-		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Apex-Stat</a>
-				</div>
+
+	<div class="container-fluid" ng-controller="StatController">
+
+
+		<div class="row">
+
+			<div class="col-xs-3">
+
+				<span>10.01.15 - 10.02.15</span>
+
 			</div>
+
+			<div class="col-xs-7">
+
+				<ul class="list-inline">
+
+					<li>Сегодня</li>
+					<li>Вчера</li>
+					<li>Неделя</li>
+					<li>Месяц</li>
+					<li>Квартал</li>
+
+				</ul>
+
+			</div>
+
+			<div class="col-xs-2">
+
+
+				<span>Группировка: День</span>
+
+			</div>
+
+
+
 		</div>
 
-		<div class="container">
-			<div class="row row-offcanvas row-offcanvas-left">
-
-				<!-- sidebar -->
-				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-
-					<ul class="nav"><li><a href="index.html">Сводная статистика</a></li></ul>
-					<ul ng-repeat="clientcard in clientcards" class="nav">
-
-						<li><a href="clientstat.html">{{ clientcard.name }}</a></li>
-
-					</ul>
-				</div>
-
-				<!-- main area -->
-				<div class="col-xs-12 col-sm-9">
-					<h1>Сводная статистика</h1>
 
 
-					<div class="row">
-						<button ng-click="param = 'visits'" type="button" class="btn btn-default btn-sm">Визиты</button>
-						<button ng-click="param = 'lids' " type="button" class="btn btn-default btn-sm">Лиды</button>
-						<button ng-click="param = 'sales' " type="button" class="btn btn-default btn-sm">Сделки</button>
-						<button ng-click="param = 'income' " type="button" class="btn btn-default btn-sm">Доход</button>
-					</div>
-					<div ng-repeat="clientcard in clientcards" class="col-xs-12 col-md-3 dashboard-card">
-						<h2>{{ clientcard.name }}</h2>
-						<span>{{ plus($index,param) }}</span>
+		<div class="row">
 
+			<div class="col-xs-8">
 
+				Chart
 
-					</div>
-
-
-				</div>
-				<!-- /.col-xs-12 main -->
 			</div>
-			<!--/.row-->
+
+			<div class="col-xs-4">
+
+				<ul>
+
+					<li>Визиты</li>
+					<li>Конверсия в заявки</li>
+					<li>Заявки</li>
+					<li>Конверсия в продажи</li>
+					<li>Продажи</li>
+					<li>Выручка</li>
+					<li>Потенциальная выручка</li>
+					<li>Прибыль</li>
+					<li>Средний чек</li>
+					<li>Расход</li>
+					<li>CPO</li>
+					<li>ROI</li>
+					<li>CPL</li>
+					<li>Чистая прибыль</li>
+
+				</ul>
+
+			</div>
+
 		</div>
-		<!--/.container-->
+
+		<div class="row">
+
+			<table class="table table-null-margin">
+
+				<thead>
+
+					<tr>
+
+						<td>Название</td>
+						<td>Визиты</td>
+						<td>Конверсия в заявки</td>
+						<td>Заявки</td>
+						<td>Конверсия в продажи</td>
+						<td>Продажи</td>
+						<td>Выручка</td>
+						<td>Прибыль</td>
+						<td>Средний чек</td>
+						<td>Расход</td>
+						<td>ROI</td>
+
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+					<tr>
+
+						<td>Итого / Средне</td>
+						<td>Визиты</td>
+						<td>Конверсия в заявки</td>
+						<td>Заявки</td>
+						<td>Конверсия в продажи</td>
+						<td>Продажи</td>
+						<td>Выручка</td>
+						<td>Прибыль</td>
+						<td>Средний чек</td>
+						<td>Расход</td>
+						<td>ROI</td>
+
+					</tr>
+
+				</tbody>
+
+				<tbody ng-repeat="ad_system in ad_systems">
+
+					<tr>
+
+						<td>{{ ad_system.name }}</td>
+						<td>Визиты</td>
+						<td>Конверсия в заявки</td>
+						<td>Заявки</td>
+						<td>Конверсия в продажи</td>
+						<td>Продажи</td>
+						<td>Выручка</td>
+						<td>Прибыль</td>
+						<td>Средний чек</td>
+						<td>Расход</td>
+						<td>ROI</td>
+
+					</tr>
+
+					<tr>
+
+						<td colspan="11">
+
+							<table class="table table-null-margin">
+
+								<tbody ng-repeat="camp in ad_system.camps">
+
+									<tr>
+
+										<td>{{ camp.name }}</td>
+										<td>Визиты</td>
+										<td>Конверсия в заявки</td>
+										<td>Заявки</td>
+										<td>Конверсия в продажи</td>
+										<td>Продажи</td>
+										<td>Выручка</td>
+										<td>Прибыль</td>
+										<td>Средний чек</td>
+										<td>Расход</td>
+										<td>ROI</td>
+
+									</tr>
+
+									<tr>
+
+										<td colspan="11">
+
+											<table class="table">
+
+												<tbody ng-repeat="ad in camp.ads">
+
+													<tr>
+
+														<td>{{ ad.name }}</td>
+														<td>Визиты</td>
+														<td>Конверсия в заявки</td>
+														<td>Заявки</td>
+														<td>Конверсия в продажи</td>
+														<td>Продажи</td>
+														<td>Выручка</td>
+														<td>Прибыль</td>
+														<td>Средний чек</td>
+														<td>Расход</td>
+														<td>ROI</td>
+
+													</tr>
+
+													<tr>
+
+														<td colspan="11">
+
+															<table class="table">
+
+																<tbody ng-repeat="keyword in ad.keywords">
+
+																	<tr>
+
+																		<td>{{ keyword.name }}</td>
+																		<td>{{ keyword.clicks }}</td>
+																		<td>Конверсия в заявки</td>
+																		<td>{{ keyword.lids }}</td>
+																		<td>Конверсия в продажи</td>
+																		<td>{{ keyword.sales }}</td>
+																		<td>{{ keyword.income }}</td>
+																		<td>Прибыль</td>
+																		<td>Средний чек</td>
+																		<td>Расход</td>
+																		<td>ROI</td>
+
+																	</tr>
+
+
+																</tbody>
+
+
+															</table>
+
+
+														</td>
+
+
+													</tr>
+
+												</tbody>
+
+											</table>
+
+										</td>
+
+									</tr>
+
+
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+
+
+
+
+
+
+
+			</table>
+
+		</div>
+
+
+
+
 	</div>
-	<!--/.page-container-->
+
+
+
+
 	<!-- script references -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -84,8 +278,10 @@
 	<!-- Modules -->
 	<script src="js/app.js"></script>
 
+
 	<!-- Controllers -->
-	<script src="js/controllers/MainController.js"></script>
+
+	<script src="js/controllers/StatController.js"></script>
 </body>
 
 </html>

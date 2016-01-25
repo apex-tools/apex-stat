@@ -1,11 +1,11 @@
-app.controller('MainController', ['$scope', function ($scope) {
+app.controller('PastController', ['$scope', function ($scope) {
 
 
 
-	$scope.arriba_YD = [
-		{
-			campaign_name: 'Аррива',
-			ads: [{
+		$scope.arriba_YD = [
+			{
+				campaign_name: 'Аррива',
+				ads: [{
 					ad_name: 'Аррива 1',
 					keywords: [{
 							keyword_name: 'сайт 1',
@@ -30,7 +30,7 @@ app.controller('MainController', ['$scope', function ($scope) {
 
 
 				},
-				{
+					  {
 					ad_name: 'Аррива 2',
 					keywords: [{
 							keyword_name: 'сайт 3',

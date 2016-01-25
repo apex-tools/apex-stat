@@ -2,3 +2,21 @@
     height: 200px;
     border: 1px solid black;
 }
+
+
+.table-null-margin {
+	margin: 0;
+	padding: 0;
+}
+
+td.table-null-margin {
+
+	margin: 0;
+	padding: 0;
+}
+
+tr.table-null-margin {
+
+	margin: 0;
+	padding: 0;
+}
